@@ -1,1 +1,1 @@
-const me = 'jo';
+require('components');

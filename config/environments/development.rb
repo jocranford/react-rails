@@ -39,7 +39,8 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 
-  config.webpack_rails.dev_server = true # use webpack dev server with hot module replacement
-  config.webpack_rails.port = 9001 # port to run dev server on
-  config.webpack_rails.host = 'localhost' # ip to bind dev server on
+  # config.webpack_rails.dev_server = true # use webpack dev server with hot module replacement
+  # config.webpack_rails.port = 9001 # port to run dev server on
+  # config.webpack_rails.host = 'localhost' # ip to bind dev server on
+  config.webpack_rails.watch = true
 end
