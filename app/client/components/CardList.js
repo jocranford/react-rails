@@ -14,7 +14,7 @@ function createFilter() {
 }
 
 export default class CardList extends React.Component {
-  constructor(props) {
+  constructor(props, index) {
     super(props);
     bindAll(this);
 
@@ -25,20 +25,24 @@ export default class CardList extends React.Component {
     };
   }
 
-  addToDo(e) {
+  addToDo() {
     this.setState({cards: this.state.cards.push(createFilter())});
   }
 
-  renderCard(card) {
+  deleteCard(index) {
+    this.setState({cards: this.state.cards.remove(index)});
+  }
+
+  renderCard(card, index) {
     return (
-      <Card cardTitle={card.get('title')} onDelete={this.deleteCard} />
+      <Card cardTitle={card.get('title')} onDelete={() => this.deleteCard(index)} key={card.get('key')} />
     );
   }
 
   render() {
     return (
       <div>
-        {this.state.cards.map((card) => this.renderCard(card))}
+        {this.state.cards.map((card, index) => this.renderCard(card, index))}
         <button className="button" onClick={() => this.addToDo()}>Add To Do</button>
       </div>
     );
