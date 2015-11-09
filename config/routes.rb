@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     get 'no_animation'
     get 'css_transitions'
     get 'react_motion'
-    get 'motion_and_staggered_motion'
+    get 'staggered_motion'
+    get 'motion_springs'
   end
 end

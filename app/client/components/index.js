@@ -1,6 +1,7 @@
 require('./Card');
 require('./CardList');
 require('./CssTransitionCardList');
-require('./ReactMotionAndStaggeredMotion');
+require('./MotionSprings');
+require('./StaggeredMotion');
 require('./ReactMotionCardList');
 
