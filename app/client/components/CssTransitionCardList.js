@@ -1,13 +1,13 @@
-import React from 'react';
+import React from 'react/addons';
 import Immutable from 'immutable';
-import uniqueId from 'lodash/utility/uniqueId';
 import bindAll from 'lodash/function/bindAll';
 import registerComponent from './../react-automount';
-import faker from 'faker';
 import Card from './Card';
 import createFilter from './../createFilter';
 
-export default class CardList extends React.Component {
+const ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
+
+export default class CssTransitionCardList extends React.Component {
   constructor(props, index) {
     super(props);
     bindAll(this);
@@ -29,18 +29,22 @@ export default class CardList extends React.Component {
 
   renderCard(card, index) {
     return (
-      <Card cardTitle={card.get('title')} onDelete={() => this.deleteCard(index)} key={card.get('key')} />
+      <div className="card-wrapper">
+        <Card cardTitle={card.get('title')} onDelete={() => this.deleteCard(index)} key={card.get('key')} />
+      </div>
     );
   }
 
   render() {
     return (
       <div>
-        {this.state.cards.map((card, index) => this.renderCard(card, index))}
         <button className="button" onClick={() => this.addToDo()}>Add To Do</button>
+        <ReactCSSTransitionGroup transitionName="card">
+          {this.state.cards.map((card, index) => this.renderCard(card, index))}
+        </ReactCSSTransitionGroup>
       </div>
     );
   }
 }
 
-registerComponent('CardList', CardList);
+registerComponent('CssTransitionCardList', CssTransitionCardList);
