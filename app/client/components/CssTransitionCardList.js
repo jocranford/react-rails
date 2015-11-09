@@ -29,8 +29,8 @@ export default class CssTransitionCardList extends React.Component {
 
   renderCard(card, index) {
     return (
-      <div className="card-wrapper">
-        <Card cardTitle={card.get('title')} onDelete={() => this.deleteCard(index)} key={card.get('key')} />
+      <div className="card-wrapper" key={card.get('key')}>
+        <Card cardTitle={card.get('title')} onDelete={() => this.deleteCard(index)} />
       </div>
     );
   }
