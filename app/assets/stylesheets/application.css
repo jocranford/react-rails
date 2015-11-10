@@ -93,23 +93,38 @@ input {
 .head {
   border-radius: 99px;
   background-color: white;
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
   border: 3px solid white;
   position: absolute;
-  background-size: 50px;
+  background-size: 100px;
+}
+
+.mouse-cursor {
+  position: absolute;
+  background-image: url(mousecursor.png);
+  width: 50px;
+  height: 50px;
+  background-size: 20px;
+  background-repeat: no-repeat;
 }
 
 .head-0 {
-  background-image: url(melbjs.jpg);
+  background-image: url(melbjs.png);
 }
 .head-1 {
   background-image: url(mark.jpg);
 }
 .head-2 {
-  background-image: url(andrey.jpg);
+  background-image: url(jo.jpg);
 }
 .head-3 {
-  background-image: url(james.jpg);
+  background-image: url(andrey.jpg);
+}
+.head-4 {
+  background-image: url(james.png);
 }
 
+.head-5, .head-6, .head-7, .head-8, .head-9, .head-10 {
+  display: none;
+}

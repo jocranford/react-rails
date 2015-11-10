@@ -35,15 +35,21 @@ const StaggeredMotionList = React.createClass({
             ? {height: spring(100, [200, 2]), width: spring(100, [200, 2]), color: style.color}
             : {height: prevStyles[i - 1].height, width: prevStyles[i - 1].width, color: style.color};
           })}>
-          {interpolatedStyles =>
-            <div>
-              {interpolatedStyles.map((interpolatedStyle, i) =>
-                <div
-                  key={i}
-                  style={{overflow: 'hidden', display: 'inline-block', height: interpolatedStyle.height, width: interpolatedStyle.width, backgroundColor: interpolatedStyle.color}}
-                />
-              )}
-            </div>
+          {
+            (interpolatedStyles) =>
+              <div>
+                {interpolatedStyles.map((interpolatedStyle, i) =>
+                  <div
+                    key={i}
+                    style={{
+                      overflow: 'hidden',
+                      display: 'inline-block',
+                      height: interpolatedStyle.height,
+                      width: interpolatedStyle.width,
+                      backgroundColor: interpolatedStyle.color}}
+                  />
+                )}
+              </div>
           }
         </StaggeredMotion>
       </div>

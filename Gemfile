@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.2.4'
-gem 'webpack_rails', '1.2.2'
+gem 'webpack_rails', '1.3.0'
 gem 'sprockets', '< 2.13'
 gem 'haml'
 # Use sqlite3 as the database for Active Record
