@@ -1,9 +1,6 @@
 import React from 'react';
-import registerComponent from './../react-automount';
 
-export default class Card extends React.Component {
-
-
+const Card = React.createClass({
   render() {
     return (
       <div className="card">
@@ -11,10 +8,12 @@ export default class Card extends React.Component {
         <button className="button delete-button" onClick={this.props.onDelete}>X</button>
       </div>
     );
-  }
-}
+  },
+});
 
 Card.propTypes = {
   cardTitle: React.PropTypes.string.isRequired,
   onDelete: React.PropTypes.func.isRequired,
 };
+
+export default Card;

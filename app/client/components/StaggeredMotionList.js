@@ -5,41 +5,15 @@ import registerComponent from './../react-automount';
 
 const StaggeredElements = {
   defaultStyles() {
-    return [{
-      height: 0,
-      width: 0,
-      color: 'red',
-    },
-    {
-      height: 0,
-      width: 0,
-      color: 'orange',
-    },
-    {
-      height: 0,
-      width: 0,
-      color: 'yellow',
-    },
-    {
-      height: 0,
-      width: 0,
-      color: 'green',
-    },
-    {
-      height: 0,
-      width: 0,
-      color: 'blue',
-    },
-    {
-      height: 0,
-      width: 0,
-      color: 'indigo',
-    },
-    {
-      height: 0,
-      width: 0,
-      color: 'violet',
-    }];
+    return [
+      { height: 0, width: 0, color: 'red', },
+      { height: 0, width: 0, color: 'orange', },
+      { height: 0, width: 0, color: 'yellow', },
+      { height: 0, width: 0, color: 'green', },
+      { height: 0, width: 0, color: 'blue', },
+      { height: 0, width: 0, color: 'indigo', },
+      { height: 0, width: 0, color: 'violet', }
+    ];
   },
 };
 

@@ -7,25 +7,22 @@ import createFilter from './../createFilter';
 
 const ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
 
-export default class CssTransitionCardList extends React.Component {
-  constructor(props, index) {
-    super(props);
-    bindAll(this);
-
-    this.state = {
+const CssTransitionCardList = React.createClass({
+  getInitialState() {
+    return {
       cards: Immutable.List(
         [createFilter()]
       ),
     };
-  }
+  },
 
   addToDo() {
     this.setState({cards: this.state.cards.push(createFilter())});
-  }
+  },
 
   deleteCard(index) {
     this.setState({cards: this.state.cards.remove(index)});
-  }
+  },
 
   renderCard(card, index) {
     return (
@@ -33,7 +30,7 @@ export default class CssTransitionCardList extends React.Component {
         <Card cardTitle={card.get('title')} onDelete={() => this.deleteCard(index)} />
       </div>
     );
-  }
+  },
 
   render() {
     return (
@@ -44,7 +41,7 @@ export default class CssTransitionCardList extends React.Component {
         </ReactCSSTransitionGroup>
       </div>
     );
-  }
-}
+  },
+});
 
 registerComponent('CssTransitionCardList', CssTransitionCardList);

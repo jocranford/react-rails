@@ -6,37 +6,38 @@ import bindAll from 'lodash/function/bindAll';
 import registerComponent from './../react-automount';
 import createFilter from './../createFilter';
 
+const SPRING_CONFIG = [300, 30];
 const HEIGHT = 60;
 
 const CardTransition = {
   willEnter(key, style) {
     return {
       ...style,
-      height: spring(0, [200, 10])
+      height: spring(0, SPRING_CONFIG)
     };
   },
 
   willLeave(key, style) {
     return {
       ...style,
-      height: spring(0, [200, 26])
+      height: spring(0, SPRING_CONFIG)
     };
   },
 
   getStyles(cards) {
     const configs = {};
     cards.forEach((card, cardIndex) => {
-      configs[String(card.get('key'))] = {
+      configs[String(cardIndex)] = {
         card,
         cardIndex,
-        height: spring(HEIGHT, [200, 10]),
+        height: spring(HEIGHT, SPRING_CONFIG),
       };
     });
     return configs;
   },
 };
 
-const ReactMotionCardList = React.createClass({
+const BrokenReactMotionCardList = React.createClass({
   getInitialState() {
     return {
       cards: Immutable.List([createFilter()]),
@@ -81,4 +82,4 @@ const ReactMotionCardList = React.createClass({
   },
 });
 
-registerComponent('ReactMotionCardList', ReactMotionCardList);
+registerComponent('BrokenReactMotionCardList', BrokenReactMotionCardList);
