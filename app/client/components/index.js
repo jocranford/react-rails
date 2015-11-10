@@ -6,4 +6,5 @@ require('./MotionSprings');
 require('./StaggeredMotionList');
 require('./ReactMotionCardList');
 require('./BrokenReactMotionCardList');
+require('./Heads');
 

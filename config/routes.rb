@@ -9,5 +9,6 @@ Rails.application.routes.draw do
     get 'staggered_motion'
     get 'motion_springs'
     get 'simple_motion'
+    get 'heads'
   end
 end

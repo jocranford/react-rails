@@ -89,3 +89,27 @@ input {
   height: 0;
   transition: height 700ms ease;
 }
+
+.head {
+  border-radius: 99px;
+  background-color: white;
+  width: 50px;
+  height: 50px;
+  border: 3px solid white;
+  position: absolute;
+  background-size: 50px;
+}
+
+.head-0 {
+  background-image: url(melbjs.jpg);
+}
+.head-1 {
+  background-image: url(mark.jpg);
+}
+.head-2 {
+  background-image: url(andrey.jpg);
+}
+.head-3 {
+  background-image: url(james.jpg);
+}
+
